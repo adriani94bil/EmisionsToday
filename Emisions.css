@@ -1,0 +1,188 @@
+/* Zona fondos */
+#imgM{
+    background-image: url("tnc_69881045.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#imgE{
+    background-color: whitesmoke;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#imgA{
+    background-image: url("eco-friendly-development-article_photo.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+/* Zona encabezados */
+h1{
+    font-size: 3.5 rem;
+    margin: 0;
+    font-family: 'Saira Semi Condensed';
+}
+h2{
+    font-family: 'Dosis', sans-serif;
+    font-style: italic;
+    font-size: 1 rem;
+    color: #357555;
+    padding-left: 8px;
+}
+h3{
+    font-family: 'Dosis', sans-serif;
+    font-size: 2.5 rem;
+    color: rgb(83, 89, 95);
+}
+ul{
+    list-style: none;
+    font-family: 'Merriweather', serif;
+    font-size: 20px;
+}
+p{
+    margin-bottom: 0;
+}
+/* Zona ID */
+#headerM{
+    margin-bottom: 40px;
+    padding-left: 0;
+    padding-right: 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0px;
+    z-index: 100;
+    background-color:#63AA82;
+}
+#mainBlock{
+    background-color: #91CBA2;
+}
+#maphead{
+    background-color: lavender;
+    border-bottom: 0px;
+    margin-bottom: 0;
+}
+#listM{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 40px;
+    width: 100%;
+    background-color: #B1DCBF;
+}
+#articleM{
+    background-color: lavender;
+    margin-bottom: 40px;
+    padding: 1%;
+}
+#navBar{
+    font-family: 'Dosis', sans-serif;
+    font-size: 3.5 vw;
+    width: 100%;
+    padding:0;
+}
+#footerM{
+    background-color: slategray;
+    font-size: 13px;
+    margin-bottom: 0;
+    color: snow;
+    padding: 1%;
+}
+#sectionOp{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#sectionDum{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#resul{
+    margin-top: 10px;
+}
+
+#row-header{
+    margin:0;
+}
+#searches{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 13px;
+}
+#subt{
+    font-size: 2.5 vw;
+    color: #15472e;
+    font-family: 'Dosis', sans-serif;
+    font-style: italic;
+}
+#botones{
+    font-size: 2 vw;
+    font-family: 'Merriweather';
+}
+#footimg{
+    width: 3%;
+    height: 3%;
+}
+#headimg{
+    width: 6%;
+    height: 6%;
+    margin-left: 3%;
+}
+/* Cartas */
+#cardGroup01{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-image: url("Industries.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+#cardGreen{
+    background-color: #63AA82;
+}
+.product-device {
+    position: absolute;
+    right: 5%;
+    bottom: -30%;
+    width: 280px;
+    height: 520px;
+    background-color: #333;
+    border-radius: 21px;
+    -webkit-transform: rotate(30deg);
+    transform: rotate(30deg);
+}
+.product-device::before {
+    position: absolute;
+    top: 10%;
+    right: 12px;
+    bottom: 10%;
+    left: 10px;
+    content: "";
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 5px;
+}
+
+.product-device-2 {
+    top: -20%;
+    right: auto;
+    bottom: 0;
+    left: 1%;
+    background-color: #e5e5e5;
+}
+/* Maps */
+#map{
+    height: 400px;
+    width: 100%;
+    box-shadow: 5px 5px 5px #888;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+#mapC{
+    height: 400px;
+    width: 100%;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+

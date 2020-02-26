@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emisions</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="Emisions.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Noto+Serif+TC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Saira+Semi+Condensed&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather&display=swap" rel="stylesheet">
+</head>
+
+<body class="text-center" id="imgE">
+    <header class="container-fluid" id="headerM">
+        <!-- NavBar -->
+        <div>
+            <nav class="navbar navbar-expand-md navbar-light" id="navBar">
+                <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+                <div class="container topnav">
+                    <div class="navbar-header">
+                        <div class="row justify-content-between align-items-center" id="row-header">
+                            <div>
+                                <h1>Emisions Today</h1>
+                                <p id="subt"> Life & Quality First</p>
+                            </div>
+                            <img id= "headimg" class="img-fluid" src="green-earth.png" alt="green">
+                            <div>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                    data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                                    aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarNavAltMarkup" id="botones">
+                                    <div class="navbar-nav">
+                                        <a class="nav-item nav-link " href="MainPage.html">Página Principal <span
+                                                class="sr-only">(current)</span></a>
+                                        <a class="nav-item nav-link" href="About.html">Sobre Nosotros</a>
+                                        <a class="nav-item active nav-link" href="Emisions.html">Emisiones</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="container-fluid">
+        <!-- Sección mostrar emisiones limite -->
+        <section id="sectionInd">
+            <h3>Indicadores de contaminacion</h3>
+            <br>
+            <div class="row row-cols-md-2 row-cols-sm-1" id="cardGroup01">
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">CO</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Monoxido de carbono</h5>
+                        <p class="card-text">Mortal a altas concentraciones</p>
+                        <p class="card-text">Valor límite: 57.000 µg/m³</p>
+                    </div>
+                </div>
+                <div class="card text-white mb-3" style="max-width: 18rem;" id="cardGreen">
+                    <div class="card-header">NOx</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Oxidos de nitrógeno</h5>
+                        <p class="card-text">Grupo causante del efecto atmosferico conocido como lluvia ácida</p>
+                        <p class="card-text">Valor límite: 40 µg/m³</p>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">PM 10</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Partículas menores de 10 micras de diámetro</h5>
+                        <p class="card-text">Particulas causantes de multiples fenómenos atmosféricos y causantes de
+                            enfermeades respiratorias.</p>
+                        <p class="card-text">Valor límite: 40 µg/m³</p>
+                    </div>
+                </div>
+                <div class="card text-white mb-3" style="max-width: 18rem;" id="cardGreen">
+                    <div class="card-header">PM 2,5</div>
+                    <div class="card-body">
+                        <h5 class="card-title">Particulas menores de 2,5 micras de diámetro</h5>
+                        <p class="card-text">Particulas especialmente peligrosas para el sistema respiatorio</p>
+                        <p class="card-text">Valor límite: 25 µg/m³</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Seccion zona operaciones: Provincia a Municipio a Puesto cercano -->
+        <section id="sectionOp">
+            <h3>Filtrar por zonas</h3>
+            <br>
+            <div>
+                <div>
+                    <p>Nombre de búsqueda</p>
+                    <input type="text" value="" id="favId">
+                </div>
+                <div>
+                    <p>Selecciona la provincia</p>
+                    <select id="provincia">
+                        <option selected disable value="">Elige una provincia</option>
+                    </select>
+                    <br>
+                </div>
+                <div>
+                    <p>Selecciona el municipio o zona más cercano</p>
+                    <select id="muni">
+                        <option selected disable value="">Elige un municipio</option>
+                    </select>
+                    <br>
+                </div>
+                <div>
+                    <p>Selecciona la medición y pulse el boton filtrar</p>
+                    <select id="medidor">
+                        <option selected disable value="">
+                            <pre> Elige una medición</pre>
+                        </option>
+                    </select>
+                    <br>
+                </div>
+                <button id="filtro">Filtrar</button>
+                <div>
+                    <button id="fav">Guardar como favoritos</button>
+                </div>
+                <!-- Zona impresion -->
+                <div class="card-deck justify-content-around" id="resul">
+
+                </div>
+                <div id="grafica">
+                    <!-- <canvas id="bar-chart"></canvas> -->
+                </div>
+                <div class="d-flex flex-column justify-content-center" id="mapZon">
+                    <!-- <div id="mapC"></div> -->
+                </div>
+                <div id="searches"></div>
+            </div>
+        </section>
+        <!-- Seccion dummy -->
+        <section id="sectionDum">
+            <div class="column" id="listM">
+                <div>
+                    <ul>
+                        <li>«Si quieres tener éxito debes respetar una regla: nunca te mientas a ti mismo».</li>
+                        <li>«Nadie logra mentir, nadie logra ocultar nada cuando mira directo a los ojos».</li>
+                        <li>«Cada trecho recorrido enriquece al peregrino y lo acerca un poco más a hacer realidad sus
+                            sueños».</li>
+                    </ul>
+                </div>
+                <div>Paulo Coehlo</div>
+            </div>
+        </section>
+    </main>
+    <footer class="mastfoot mt-auto" id="footerM">
+        <div>
+            <a href="Emisions.html"><img id ="footimg" src="up-arrow.png" alt="Emisions"></a>
+        </div>
+        <div>
+            <p>© 2020 Copyright Openaq.org | Leafletjs | Mapbox </p>
+        </div>
+        <div>
+            <p>Powered by BBK Bootcamp</p>
+        </div>
+    </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="Methods.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+</body>
+
+</html>
